@@ -52,7 +52,7 @@ The baseline RNN demonstrated a fundamental ability to distinguish activities bu
 ### Latent Space Analysis: VanillaRNN Hidden States
 To gain deeper insight into how the baseline VanillaRNN perceives different activities, we performed **Principal Component Analysis (PCA)** on the hidden states ($h_n$) extracted before the final classification layer.
 
-As shown in **image_e87321.png**, the visualization of these latent representations reveals the following:
+As shown in the notebook, the visualization of these latent representations reveals the following:
 
 *   **Linear Separability of Static Activities:** The model successfully clusters "Laying" far apart from dynamic activities like "Walking", which explains its high precision in that category.
 *   **Challenges in Transitional Movements:** The significant overlap in the *WALKING vs WALKING_UPSTAIRS* and *WALKING_DOWNSTAIRS vs WALKING_UPSTAIRS* plots demonstrates that the simple RNN architecture struggles to extract distinct temporal features for movements with similar periodicities.
@@ -65,7 +65,7 @@ As shown in **image_e87321.png**, the visualization of these latent representati
 ### RNN Hidden State Trajectories over Time
 Beyond static snapshots, we visualized the temporal evolution of the VanillaRNN's hidden states using PCA trajectories. This analysis tracks how the model's internal representation "travels" in the latent space during a 128-step sequence.
 
-As illustrated in **image_e819c2.png** (where green squares represent the start and red crosses represent the end of the sequence):
+As illustrated in the notebook (where green squares represent the start and red crosses represent the end of the sequence):
 
 *   **Path Divergence:** The model often starts from a similar latent region (the green markers) but must push the hidden states toward distinct regions to make a final classification.
 *   **Dynamic Chaos:** In cases like *WALKING_DOWNSTAIRS vs WALKING_UPSTAIRS*, the trajectories follow highly overlapping and non-linear paths. This explains the high misclassification rate, as the VanillaRNN fails to maintain a clear "directional" separation throughout the sequence.
