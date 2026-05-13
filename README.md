@@ -199,10 +199,3 @@ The progression from a baseline **Vanilla RNN (57%)** to a **Feature-Engineered 
 All necessary libraries are listed in the `requirements.txt` file. You can install them using:
 ```bash
 pip install -r requirements.txt
-
-## 💻 How to Run
-1. Ensure your data is formatted as a 3D tensor: `[Batch, TimeSteps, Features]`.
-2. To train the LSTM model:
-   ```python
-   model = LSTMModel(input_size=12, hidden_size=128, num_classes=6, num_layers=2)
-   model.to(device)
